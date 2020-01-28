@@ -11,7 +11,7 @@ This paper introduced atomic record appends to deal with large files, derives th
 ## Different Situation than previous DFS
 
 * component failures are the norm
-* files are hugh (Multi-GB)
+* files are huge (Multi-GB)
 * mutated by appending than overwriting
 
 ## Assumption
