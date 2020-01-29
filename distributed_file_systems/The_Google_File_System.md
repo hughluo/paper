@@ -7,17 +7,13 @@
 
 ## Contribution
 * GFS illustrates how to handle files in the environment of large-scale data processing workloads on commodity hardware.
-* It introduced atomic record appends to deal with large files, derives the HDFS in futher.
+* It introduced atomic record appends to deal with large files, differentiate from previous DFS.
+* It derives the HDFS in futher.
 
-
-## Different Situation than previous DFS
-
-* component failures are the norm
-* files are huge (Multi-GB)
-* mutated by appending than overwriting
 
 ## Assumption
-
+* component failures are the norm
+* files are huge (Multi-GB)
 * large streaming read and small random reads
 * multi clients that concurrently append to the same file
 * high sustained bandwidth more important than low latency
