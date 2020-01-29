@@ -9,7 +9,7 @@ Programs written in this functional style are automatically parallized and execu
 * computation have to be distributed across hundreds or thousandes of machines in order to finish in a reasonable amount of time
 * large cluster of commodity computers
 
-## Solve Which Problem
+## Contribution
 Abstract the complexity of parallize the computation, distribute the data,handle the failures and load balancing.
 
 ## Conception
