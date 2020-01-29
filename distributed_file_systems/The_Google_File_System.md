@@ -1,14 +1,14 @@
 # The Google File System
 
-This paper introduced atomic record appends to deal with large files, derives the HDFS in futher.
 
-[link](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
+[Link](https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf)
 
-GFS support large-scale data processing workloads on commodity hardware.
 
-## Keywords
 
-* atomic append
+## Contribution
+* GFS illustrates how to handle files in the environment of large-scale data processing workloads on commodity hardware.
+* It introduced atomic record appends to deal with large files, derives the HDFS in futher.
+
 
 ## Different Situation than previous DFS
 
@@ -22,7 +22,7 @@ GFS support large-scale data processing workloads on commodity hardware.
 * multi clients that concurrently append to the same file
 * high sustained bandwidth more important than low latency
 
-## Design
+## Implementation
 
 A GFS cluster consists of a single master and multiple chunkservers and is accessed by multiple clients.
  File system control(via master) and data transfer (directly between chunck servers and client) is separated.
@@ -50,7 +50,7 @@ A GFS cluster consists of a single master and multiple chunkservers and is acces
 * pro: redude interaction frequency, reduce memory consumption by metadata
 * contra: single hotspot (fix: higher replication factor, maybe consider allow client to read data from other client)
 
-## Consistency Model, atomic record append
+### Consistency Model, atomic record append
 
 * a record append atomically at least once
 * client submit only the data to append, offset is then returned.
