@@ -10,7 +10,14 @@ Programs written in this functional style are automatically parallized and execu
 * large cluster of commodity computers
 
 ## Contribution
-Abstract the complexity of parallize the computation, distribute the data,handle the failures and load balancing.
+* Abstract the complexity of parallize the computation, distribute the data,handle the failures and load balancing.
+* Large variety of problems are easily expressible as MapReduce problem
+* The implementation scales well to large cluster of machines (thousands)
+
+## Findings
+* restricting programming model makes it easy to parallize, and make distribute computaions fault tolerant
+* network bandwidth is a scare resource. 
+
 
 ## Conception
 ### Map
@@ -34,3 +41,17 @@ Google's implementation is based on a large cluster of commodity computers, with
 * When a map worker failed, all reduce workers are notified to read from another available location when they do not already touch the failed worker.
 ### Master Failure
 Make periodic checkpoints if multiple masters. For single master, it absort the MapReduce.
+
+
+## Refinements
+* **Partitioning Function**: user can specify partitioning function, default is hash(key) mod R.
+* **Combiner Function**: user coudld specify combiner to conduct partial merging of data before go to reduce.
+* **Skip Bad Records**: sequence numbers is stored before each process start, if it failed it will send "last gasp" UDP to master, which enable master to determine sequence that failed many times as "bad records" to skip
+* **Side Effects**: additional outputs will be deterministic
+* **Status Information**: master run an internal HTTP server to provide status informations
+* **Counters**: user can also define counters and get count result from user code
+* **Enable Backup**: backup, when a MapReduce is close to complete to avoid "straggler" issue, avoid long-tail before the whole task is finished. Disable backup takes 44% longer to finish
+
+## Practice
+M(Map tasks) and R(R tasks) should be much larger than the workers. Google: M = 200,000, R = 5000, 2000 worker machines.
+
