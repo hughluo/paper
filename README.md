@@ -1,6 +1,6 @@
 # paper
-notes for paper
 
-MapReduce: Simplified Data Processing on Large Clusters
-The Google File System
+* MapReduce: Simplified Data Processing on Large Clusters
+* The Google File System
+* Why Functional Programming Matters
 
