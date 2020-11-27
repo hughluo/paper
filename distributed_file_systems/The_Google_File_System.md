@@ -9,6 +9,7 @@
 * GFS illustrates how to handle files in the environment of large-scale data processing workloads on commodity hardware.
 * It introduced atomic record appends to deal with large files, differentiate from previous DFS.
 * It derives the HDFS in futher.
+* Industry pratice (large scale of nodes which is not possible in academia research before. Single master works fine, etc.)
 
 
 ## Assumption
