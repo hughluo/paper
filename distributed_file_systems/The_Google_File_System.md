@@ -14,7 +14,7 @@
 ## Assumption
 * component failures are the norm
 * files are huge (Multi-GB)
-* large streaming read and small random reads
+* large streaming (sequential) read and small random reads
 * multi clients that concurrently append to the same file
 * high sustained bandwidth more important than low latency
 
