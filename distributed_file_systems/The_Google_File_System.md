@@ -20,6 +20,7 @@
 
 * single datacenter
 * internal usage in Google
+* performance over consistency (if some data is wrong order in search engine, who cares?)
 
 ## Implementation
 
