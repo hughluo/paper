@@ -19,6 +19,7 @@
 * high sustained bandwidth more important than low latency
 
 * single datacenter
+* internal usage in Google
 
 ## Implementation
 
