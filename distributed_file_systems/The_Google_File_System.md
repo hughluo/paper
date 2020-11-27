@@ -21,7 +21,7 @@
 * single datacenter
 * internal usage in Google
 * performance over consistency (if some data is wrong order in search engine, who cares?)
-* Let application decide how to handle wrong data
+* Let application decide how to handle wrong data (checksum etc..)
 
 ## Implementation
 
