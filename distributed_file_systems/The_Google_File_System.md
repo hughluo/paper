@@ -18,6 +18,8 @@
 * multi clients that concurrently append to the same file
 * high sustained bandwidth more important than low latency
 
+* single datacenter
+
 ## Implementation
 
 A GFS cluster consists of a single master and multiple chunkservers and is accessed by multiple clients.
